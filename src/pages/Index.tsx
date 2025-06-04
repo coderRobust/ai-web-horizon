@@ -43,11 +43,11 @@ const Index = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-8">
-            <div className="bg-white p-4 rounded-2xl shadow-2xl shadow-blue-500/25 hover:scale-105 transition-transform duration-300">
+            <div className="bg-white p-6 rounded-3xl shadow-2xl shadow-blue-500/25 hover:scale-105 transition-all duration-500 hover:shadow-blue-500/40">
               <img 
                 src="/lovable-uploads/30c84560-900f-4e62-bcf5-21d656096be1.png" 
                 alt="CerevynAI Logo" 
-                className="h-16 w-auto"
+                className="h-24 w-auto"
               />
             </div>
           </div>

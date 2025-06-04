@@ -24,12 +24,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-gray-200/50 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2 group">
               <img 
                 src="/lovable-uploads/30c84560-900f-4e62-bcf5-21d656096be1.png" 
                 alt="CerevynAI Logo" 
-                className="h-8 w-auto group-hover:scale-105 transition-transform"
+                className="h-12 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
               />
             </Link>
 
@@ -111,7 +111,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-16">
+      <main className="pt-20">
         {children}
       </main>
 
@@ -124,7 +124,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <img 
                   src="/lovable-uploads/30c84560-900f-4e62-bcf5-21d656096be1.png" 
                   alt="CerevynAI Logo" 
-                  className="h-8 w-auto"
+                  className="h-10 w-auto filter brightness-0 invert"
                 />
               </div>
               <p className="text-gray-400 mb-4 max-w-md">
