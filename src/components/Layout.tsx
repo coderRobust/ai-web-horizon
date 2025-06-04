@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Menu, X } from 'lucide-react';
+import { Brain, Menu, X, LogIn } from 'lucide-react';
 import { useState } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -9,8 +9,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'Products', href: '/products' },
+    { name: 'AI Products', href: '/ai-products' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Pricing', href: '/pricing' },
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -33,29 +35,40 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden lg:flex items-center space-x-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors relative ${
+                  className={`px-3 py-2 text-sm font-medium transition-colors relative rounded-lg ${
                     isActive(item.href)
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                   }`}
                 >
                   {item.name}
-                  {isActive(item.href) && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full" />
-                  )}
                 </Link>
               ))}
+            </div>
+
+            {/* Desktop Right Side Buttons */}
+            <div className="hidden lg:flex items-center space-x-3">
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+                <LogIn className="w-4 h-4" />
+                <span>Login</span>
+              </button>
+              <Link
+                to="/get-started"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105"
+              >
+                Get Started Free
+              </Link>
             </div>
 
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -64,7 +77,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/50">
+          <div className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/50">
             <div className="px-4 py-3 space-y-2">
               {navigation.map((item) => (
                 <Link
@@ -80,6 +93,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   {item.name}
                 </Link>
               ))}
+              <div className="pt-4 space-y-2 border-t border-gray-200">
+                <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors w-full">
+                  <LogIn className="w-4 h-4" />
+                  <span>Login</span>
+                </button>
+                <Link
+                  to="/get-started"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 py-2 rounded-lg text-sm font-medium text-center"
+                >
+                  Get Started Free
+                </Link>
+              </div>
             </div>
           </div>
         )}
