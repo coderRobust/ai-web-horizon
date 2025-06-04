@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Menu, X, LogIn } from 'lucide-react';
+import { Menu, X, LogIn } from 'lucide-react';
 import { useState } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -26,12 +26,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Brain className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                CerevynAI
-              </span>
+              <img 
+                src="/lovable-uploads/30c84560-900f-4e62-bcf5-21d656096be1.png" 
+                alt="CerevynAI Logo" 
+                className="h-8 w-auto group-hover:scale-105 transition-transform"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -122,10 +121,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">CerevynAI</span>
+                <img 
+                  src="/lovable-uploads/30c84560-900f-4e62-bcf5-21d656096be1.png" 
+                  alt="CerevynAI Logo" 
+                  className="h-8 w-auto"
+                />
               </div>
               <p className="text-gray-400 mb-4 max-w-md">
                 We're building transformative LLM-powered AI tools to help enterprises automate, learn, and evolve.

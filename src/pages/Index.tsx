@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '@/components/Layout';
 import FeatureCard from '@/components/FeatureCard';
@@ -44,8 +43,12 @@ const Index = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/25 hover:scale-105 transition-transform duration-300">
-              <Brain className="w-10 h-10 text-white" />
+            <div className="bg-white p-4 rounded-2xl shadow-2xl shadow-blue-500/25 hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/lovable-uploads/30c84560-900f-4e62-bcf5-21d656096be1.png" 
+                alt="CerevynAI Logo" 
+                className="h-16 w-auto"
+              />
             </div>
           </div>
           
